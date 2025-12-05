@@ -1,29 +1,23 @@
 public class Microwave extends Device {
     private int timer;
     private int temperature;
-
     public Microwave() {
         this.timer = 0;
-        this.temperature = 100;
+        this.temperature = 0;
     }
-
     public void setTimer(int timer) {
         this.timer = timer;
-        showStatus();
+        if (isOn()) showStatus();
     }
-
     public void setTemperature(int temp) {
         this.temperature = temp;
-        showStatus();
+        if (isOn()) showStatus();
     }
-
     @Override
     public void showStatus() {
         if (isOn()) {
-            System.out.println("Microwave ON - Timer: " + timer +
-                    " sec, Temperature: " + temperature + "°C");
-        } else {
-            System.out.println("Microwave is OFF.");
+            System.out.println("Microwave  - Timer: " +
+                    timer + " sec, Temperature: " + temperature + "°C");
         }
     }
 }
